@@ -18,13 +18,6 @@ export default defineConfig(({ command, mode }) => {
       viteMockServe({
         localEnabled: command === 'serve', //保证开发阶段可以使用mock接口
       }),
-
-      // createMockServer({
-      //   // 自动判断是否启用 Mock 服务
-      //   supportTs: false, // 是否支持 TypeScript
-      //   mockDir: 'mock', // Mock 文件目录
-      //   watchFiles: true, // 是否监听文件变化
-      // }),
     ],
 
     resolve: {
