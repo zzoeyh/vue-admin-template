@@ -1,14 +1,18 @@
-html{
-  box-sizing: content-box;
-  font-family: SYHTHea;
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+
+    outline: none;
 }
-// 清除标签默认间距
+
 html,
 body,
 div,
 span,
 applet,
 object,
+iframe,
 h1,
 h2,
 h3,
@@ -83,11 +87,17 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
+    font: inherit;
+    font-size: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    vertical-align: baseline;
+
+    border: 0;
 }
-/* 旧版本浏览器对H5新标签兼容处理 */
+
 article,
 aside,
 details,
@@ -99,65 +109,78 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
-// 清除标签默认样式
+
+body {
+    line-height: 1;
+}
+
 ol,
-ul,
-li {
-  list-style: none;
+ul {
+    list-style: none;
 }
+
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
+
+    &:before,
+    &:after {
+        content: '';
+        content: none;
+    }
 }
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+
+    position: relative;
+
+    vertical-align: baseline;
 }
-// 表格重置
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
 }
-th,
-td {
-  vertical-align: middle;
+
+input,
+textarea,
+button {
+    font-family: inhert;
+    font-size: inherit;
+
+    color: inherit;
 }
-/* 全局自定义标签样式 */
-a {
-  outline: none;
-  text-decoration: none;
-  -webkit-backface-visibility: hidden;
+
+select {
+    text-indent: .01px;
+    text-overflow: '';
+
+    border: 0;
+    border-radius: 0;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
-a:focus {
-  outline: none;
+
+select::-ms-expand {
+    display: none;
 }
-input:focus,
-select:focus,
-textarea:focus {
-  outline: -webkit-focus-ring-color auto 0;
-}
-// 滚动条样式
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-/*定义滚动条轨道 内阴影+圆角*/
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background-color: rgba($color: #ffffff, $alpha: 0.7);
-}
-/*定义滑块 内阴影+圆角*/
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: rgba(0, 0, 0, 0.3);
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.53);
-    cursor: pointer;
-  }
+
+code,
+pre {
+    font-family: monospace, monospace;
+    font-size: 1em;
 }

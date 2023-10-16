@@ -11,8 +11,8 @@ import type {
 //项目用户相关的请求地址
 
 enum API {
-  // LOGIN_URL = '/admin/acl/index/login',
-  LOGIN_URL = '/login',
+  LOGIN_URL = '/admin/acl/index/login',
+  // LOGIN_URL = '/login',
 
   USERINFO_URL = '/admin/acl/index/info',
 

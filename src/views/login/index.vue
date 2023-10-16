@@ -1,7 +1,6 @@
 <template>
   <div class="login_container">
     <el-row>
-      <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
         <el-form
           class="login_form"
@@ -47,6 +46,8 @@ import { useRouter, useRoute } from 'vue-router'
 import { reactive, ref } from 'vue'
 import { ElNotification } from 'element-plus'
 import useUserStore from '@/store/modules/user'
+import { getTime } from '@/utils/time'
+
 let useStore = useUserStore()
 let loading = ref<boolean>(false)
 //获取el-form组件
@@ -77,6 +78,7 @@ const login = async () => {
     ElNotification({
       type: 'success',
       message: '登录成功！',
+      title: `${getTime()}好！`,
     })
     //登录成功,加载效果也消失
     loading.value = false
