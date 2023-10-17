@@ -13,49 +13,42 @@ import pinia from './store'
 const userStore = useUserStore(pinia)
 
 //全局前置守卫
+// 全局前置守卫
 router.beforeEach(async (to: any, from: any, next: any) => {
-  //网页的名字
   document.title = `${setting.title}-${to.meta.title}`
-  //访问某一个路由之前的守卫
   nprogress.start()
-  //获取token，去判断用户登录、还是未登录
   const token = userStore.token
-  //获取用户名字
-  let username = userStore.username
-  //用户登录判断
+  const username = userStore.username
+
   if (token) {
-    //登陆成功，访问login。指向首页
     if (to.path == '/login') {
       next('/home')
+      return // 终止函数执行，避免多次调用 next()
     } else {
-      //登陆成功访问其余的，放行
-      //有用户信息
       if (username) {
-        //放行
         next()
+        return // 终止函数执行，避免多次调用 next()
       } else {
-        //如果没有用户信息，在收尾这里发请求获取到了用户信息再放行
         try {
-          //获取用户信息
           await userStore.userInfo()
           next()
+          return // 终止函数执行，避免多次调用 next()
         } catch (error) {
-          //token过期|用户手动处理token
-          //退出登陆->用户相关的数据清空
           userStore.userLogout()
           next({ path: '/login', query: { redirect: to.path } })
+          return // 终止函数执行，避免多次调用 next()
         }
       }
     }
   } else {
-    //用户未登录
     if (to.path == '/login') {
       next()
+      return // 终止函数执行，避免多次调用 next()
     } else {
       next({ path: '/login', query: { redirect: to.path } })
+      return // 终止函数执行，避免多次调用 next()
     }
   }
-  next()
 })
 
 //全局后置守卫
