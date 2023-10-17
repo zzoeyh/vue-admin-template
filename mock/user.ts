@@ -5,7 +5,7 @@ function createUserList() {
       userId: 1,
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'admin',
+      name: 'admin',
       password: '111111',
       desc: '平台管理员',
       roles: ['平台管理员'],
@@ -17,7 +17,7 @@ function createUserList() {
       userId: 2,
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'system',
+      name: 'system',
       password: '111111',
       desc: '系统管理员',
       roles: ['系统管理员'],
@@ -38,7 +38,7 @@ export default [
       const { username, password } = body
       //调用获取用户信息函数,用于判断是否有此用户
       const checkUser = createUserList().find(
-        (item) => item.username === username && item.password === password,
+        (item) => item.name === username && item.password === password,
       )
       //没有用户返回失败信息
       if (!checkUser) {
@@ -46,7 +46,7 @@ export default [
       }
       //如果有返回成功信息
       const { token } = checkUser
-      return { code: 200, data: { token } }
+      return { code: 200, data: token }
     },
   },
   // 获取用户信息
@@ -63,7 +63,7 @@ export default [
         return { code: 201, data: { message: '获取用户信息失败' } }
       }
       //如果有返回成功信息
-      return { code: 200, data: { checkUser } }
+      return { code: 200, data: checkUser }
     },
   },
 ]

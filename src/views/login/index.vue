@@ -54,7 +54,6 @@ let loading = ref<boolean>(false)
 let loginForms = ref()
 //收集账号与密码数据
 let loginForm = reactive({
-  loginDevice: 1,
   username: 'admin',
   password: '111111',
 })
@@ -146,6 +145,7 @@ const rules = {
     background: url('@/assets/images/login_form.png') no-repeat;
     background-size: cover;
     padding: 40px;
+    left: 100%;
     h1 {
       color: white;
       font-size: 40px;

@@ -5,14 +5,26 @@
   </el-icon>
   <!-- 左侧的面包屑 -->
   <el-breadcrumb separator-icon="ArrowRight">
-    <el-breadcrumb-item>权限管理</el-breadcrumb-item>
-    <el-breadcrumb-item>用户管理</el-breadcrumb-item>
+    <el-breadcrumb-item
+      v-for="(item, index) in $route.matched"
+      :key="index"
+      :to="item.path"
+      v-show="item.meta.title"
+    >
+      <el-icon>
+        <component :is="item.meta.icon"></component>
+      </el-icon>
+      <span style="margin: 0px 3px">{{ item.meta.title }}</span>
+    </el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 
 <script setup lang="ts">
 import useLayOutSettingStore from '@/store/modules/setting'
 //获取layout配置相关的仓库
+import { useRoute } from 'vue-router'
+//获取路由对象
+let $route = useRoute()
 let LayOutSettingStore = useLayOutSettingStore()
 
 //点击图标的切换

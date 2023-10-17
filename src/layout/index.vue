@@ -16,7 +16,7 @@
           :default-active="$route.path"
           background-color="#001529"
           text-color="white"
-          active-text-color="yellowgreen"
+          active-text-color="#409eff"
         >
           <!--根据路由动态生成菜单-->
           <Menu :menuList="userStore.menuRoutes"></Menu>

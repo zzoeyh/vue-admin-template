@@ -9,6 +9,8 @@ import 'virtual:svg-icons-register'
 import gloablComponent from './components/index'
 //引入路由
 import router from './router'
+//引入路由鉴权文件
+import './permission'
 //引入仓库
 import pinia from './store'
 // import '@/styles'
