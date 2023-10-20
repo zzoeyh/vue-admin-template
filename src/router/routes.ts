@@ -93,6 +93,16 @@ export const constantRoute = [
       },
     ],
   },
+  {
+    path: '/screen',
+    component: () => import('@/views/screen/index.vue'),
+    name: 'Screen',
+    meta: {
+      hidden: false,
+      title: '数据大屏',
+      icon: 'Platform',
+    },
+  },
   // {
   //   //重定向
   //   path: '/:pathMatch(.*)*',

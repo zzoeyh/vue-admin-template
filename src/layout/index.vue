@@ -50,6 +50,7 @@ import { useRoute } from 'vue-router'
 import Logo from './logo/index.vue'
 //引入菜单组件
 import Menu from './menu/index.vue'
+import Main from './main/index.vue'
 import Tabbar from './tabbar/index.vue'
 //获取用户Store
 import useUserStore from '@/store/modules/user'
