@@ -14,6 +14,7 @@ import './permission'
 //引入仓库
 import pinia from './store'
 // import '@/styles'
+import i18n from '@/lang/index'
 createApp(App)
   .use(ElementPlus, {
     locale: zhCn,
@@ -21,4 +22,5 @@ createApp(App)
   .use(gloablComponent)
   .use(router)
   .use(pinia)
+  .use(i18n)
   .mount('#app')

@@ -11,6 +11,9 @@
     circle
     @click="fullScreen"
   ></el-button>
+  <el-button size="small" icon="FullScreen" circle @click="changeLanguage">
+    英文
+  </el-button>
   <el-button size="small" icon="Setting" circle></el-button>
   <img
     :src="userStore.avatar"
@@ -35,8 +38,11 @@
 <script setup lang="ts">
 import useLayOutSettingStore from '@/store/modules/setting'
 import useUserStore from '@/store/modules/user'
+import { useI18n } from 'vue-i18n'
+
 let layoutSettingStore = useLayOutSettingStore()
 let userStore = useUserStore()
+const i18 = useI18n()
 //刷新按钮点击的回调
 const updateRefresh = () => {
   layoutSettingStore.refresh = !layoutSettingStore.refresh
@@ -53,6 +59,12 @@ const fullScreen = () => {
     //退出全屏
     document.exitFullscreen()
   }
+}
+const changeLanguage = () => {
+  let lang = layoutSettingStore.locale === 'zh-cn' ? 'en' : 'zh-cn'
+  layoutSettingStore.setLocale(lang)
+  i18.locale.value = lang
+  console.log(layoutSettingStore.locale)
 }
 </script>
 
