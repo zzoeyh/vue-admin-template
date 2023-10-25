@@ -94,6 +94,45 @@ export const constantRoute = [
     ],
   },
   {
+    path: '/manage',
+    component: () => import('@/layout/index.vue'),
+    name: 'Manage',
+    meta: {
+      title: '权限管理',
+      icon: 'Lock',
+    },
+    redirect: '/manage/user',
+    children: [
+      {
+        path: '/manage/user',
+        component: () => import('@/views/manage/user/index.vue'),
+        name: 'User',
+        meta: {
+          title: '用户管理',
+          icon: 'User',
+        },
+      },
+      {
+        path: '/manage/role',
+        component: () => import('@/views/manage/role/index.vue'),
+        name: 'Role',
+        meta: {
+          title: '角色管理',
+          icon: 'UserFilled',
+        },
+      },
+      {
+        path: '/manage/permission',
+        component: () => import('@/views/manage/permission/index.vue'),
+        name: 'Permission',
+        meta: {
+          title: '菜单管理',
+          icon: 'Monitor',
+        },
+      },
+    ],
+  },
+  {
     path: '/screen',
     component: () => import('@/views/screen/index.vue'),
     name: 'Screen',

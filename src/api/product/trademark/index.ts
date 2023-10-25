@@ -1,3 +1,4 @@
+//品牌
 import request from '@/utils/request'
 import type { TradeMarkResponseData, TradeMark } from './type'
 
