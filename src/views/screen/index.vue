@@ -3,9 +3,20 @@
     <div class="screen" ref="screen">
       <div class="top"><Top /></div>
       <div class="bottom">
-        <div class="left">左侧</div>
-        <div class="center">中间</div>
-        <div class="right">右侧</div>
+        <div class="left">
+          <Tourist class="tourist"></Tourist>
+          <Sex class="sex"></Sex>
+          <Age class="age"></Age>
+        </div>
+        <div class="center">
+          <Map class="map"></Map>
+          <Line class="line"></Line>
+        </div>
+        <div class="right">
+          <Rank class="rank"></Rank>
+          <Year class="year"></Year>
+          <Counter class="count"></Counter>
+        </div>
       </div>
     </div>
   </div>
@@ -16,6 +27,19 @@ import { ref, onMounted } from 'vue'
 //获取数据大屏展示内容盒子的DOM元素
 //引入顶部的子组件
 import Top from './components/top/index.vue'
+//引入左侧三个子组件
+import Tourist from './components/tourist/index.vue'
+import Sex from './components/sex/index.vue'
+import Age from './components/age/index.vue'
+
+//引入中间两个子组件
+import Map from './components/map/index.vue'
+import Line from './components/line/index.vue'
+
+//引入右侧三个子组件
+import Rank from './components/rank/index.vue'
+import Year from './components/year/index.vue'
+import Counter from './components/counter/index.vue'
 let screen = ref()
 onMounted(() => {
   screen.value.style.transform = `scale(${getScale()}) translate(-50%,-50%)`

@@ -1,5 +1,6 @@
 <template>
   <!-- 左侧菜单 -->
+
   <div class="layout_container">
     <div
       class="layout_slider"
@@ -36,6 +37,9 @@
       :class="{ fold: LayOutSettingStore.fold ? true : false }"
     >
       <Main></Main>
+      <div class="layout_config">
+        <Config />
+      </div>
     </div>
   </div>
 </template>
@@ -52,6 +56,7 @@ import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
 import Main from './main/index.vue'
 import Tabbar from './tabbar/index.vue'
+import Config from './config/index.vue'
 //获取用户Store
 import useUserStore from '@/store/modules/user'
 import useLayOutSettingStore from '@/store/modules/setting'

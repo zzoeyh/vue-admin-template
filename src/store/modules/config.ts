@@ -4,14 +4,15 @@ import { defineStore } from 'pinia'
 const useConfigStore = defineStore('ConfigStore', {
   state: () => {
     return {
-      fold: false, //用户控制菜单折叠还是收起控制
-      refresh: false, //仓库这个属性用于控制刷新效果
-      locale: 'zh-cn', //控制国际化功能
+      settingVisible: false, //控制设置面板抽屉
     }
   },
   actions: {
     setLocale(lang: string) {
       this.locale = lang
+    },
+    setSettingVisible(bool: boolean) {
+      this.settingVisible = bool
     },
   },
 })

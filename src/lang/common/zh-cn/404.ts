@@ -8,4 +8,10 @@ export default {
   navBar: {
     home: '主页',
   },
+  dashboard: {
+    Member: {
+      registration: '测试',
+    },
+    'Number of attachments': '123',
+  },
 }

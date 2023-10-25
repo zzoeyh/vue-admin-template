@@ -8,4 +8,10 @@ export default {
   navBar: {
     home: 'Home',
   },
+  dashboard: {
+    Member: {
+      registration: 'testing',
+    },
+    'Number of attachments': '123',
+  },
 }
