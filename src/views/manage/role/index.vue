@@ -213,7 +213,7 @@ const search = () => {
 }
 //重置按钮的回调
 const reset = () => {
-  settingStore.refsh = !settingStore.refsh
+  settingStore.refresh = !settingStore.refresh
 }
 //添加职位按钮的回调
 const addRole = () => {

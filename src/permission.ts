@@ -19,38 +19,42 @@ router.beforeEach(async (to: any, from: any, next: any) => {
   nprogress.start()
   const token = userStore.token
   const username = userStore.username
-
+  //用户登录判断
   if (token) {
+    //登陆成功，访问login。指向首页
     if (to.path == '/login') {
-      next('/home')
-      return // 终止函数执行，避免多次调用 next()
+      next('/')
     } else {
+      //登陆成功访问其余的，放行
+      //有用户信息
       if (username) {
+        //放行
         next()
-        return // 终止函数执行，避免多次调用 next()
       } else {
+        //如果没有用户信息，在收尾这里发请求获取到了用户信息再放行
         try {
+          //获取用户信息
           await userStore.userInfo()
-          next()
-          return // 终止函数执行，避免多次调用 next()
+          //万一刷新的时候是异步路由，有可能获取到用户信息但是异步路由没有加载完毕，出现空白效果
+          next({ ...to })
         } catch (error) {
-          userStore.userLogout()
+          //token过期|用户手动处理token
+          //退出登陆->用户相关的数据清空
+
+          await userStore.userLogout()
           next({ path: '/login', query: { redirect: to.path } })
-          return // 终止函数执行，避免多次调用 next()
         }
       }
     }
   } else {
+    //用户未登录
     if (to.path == '/login') {
       next()
-      return // 终止函数执行，避免多次调用 next()
     } else {
       next({ path: '/login', query: { redirect: to.path } })
-      return // 终止函数执行，避免多次调用 next()
     }
   }
 })
-
 //全局后置守卫
 router.afterEach((to: any, from: any) => {
   // to and from are both route objects.

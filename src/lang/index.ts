@@ -1,5 +1,4 @@
 import { createI18n } from 'vue-i18n'
-import type { I18n, Composer } from 'vue-i18n'
 import elementZhcnLocale from 'element-plus/lib/locale/lang/zh-cn'
 import elementEnLocale from 'element-plus/lib/locale/lang/en'
 import useConfigStore from '@/store/modules/config'

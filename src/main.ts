@@ -17,7 +17,8 @@ import './permission'
 import pinia from './store'
 // import '@/styles'
 import i18n from '@/lang/index'
-createApp(App)
+import { isHasButton } from './directive/has'
+const app = createApp(App)
   .use(ElementPlus, {
     locale: zhCn,
   })
@@ -25,4 +26,6 @@ createApp(App)
   .use(router)
   .use(pinia)
   .use(i18n)
-  .mount('#app')
+
+isHasButton(app)
+app.mount('#app')

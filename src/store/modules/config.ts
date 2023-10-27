@@ -5,6 +5,7 @@ const useConfigStore = defineStore('ConfigStore', {
   state: () => {
     return {
       settingVisible: false, //控制设置面板抽屉
+      locale: 'zh-cn',
     }
   },
   actions: {

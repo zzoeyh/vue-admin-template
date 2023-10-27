@@ -34,17 +34,57 @@ export const constantRoute = [
       },
     ],
   },
+
   {
-    //404
-    path: '/404',
-    component: () => import('@/views/404/index.vue'),
-    name: '404',
+    path: '/screen',
+    component: () => import('@/views/screen/index.vue'),
+    name: 'Screen',
     meta: {
-      title: '404',
-      hidden: true,
-      icon: 'DocumentDelete',
+      hidden: false,
+      title: '数据大屏',
+      icon: 'Platform',
     },
   },
+  // {
+  //   //重定向
+  //   path: '/:pathMatch(.*)*',
+  //   redirect: '/404',
+  //   name: 'Any',
+  // },
+  {
+    path: '/result',
+    component: () => import('@/layout/index.vue'),
+    name: 'Result',
+    meta: {
+      title: '结果页',
+      icon: 'CircleCheck',
+    },
+    redirect: '/result/error',
+    children: [
+      {
+        path: '/result/error',
+        component: () => import('@/views/result/error/index.vue'),
+        name: 'Error',
+        meta: {
+          title: '错误页',
+          icon: 'CircleClose',
+        },
+      },
+      {
+        path: '/result/success',
+        component: () => import('@/views/result/success/index.vue'),
+        name: 'Success',
+        meta: {
+          title: '成功页',
+          icon: 'CircleCheck',
+        },
+      },
+    ],
+  },
+]
+
+//异步路由
+export const asnycRoute = [
   {
     path: '/product',
     component: () => import('@/layout/index.vue'),
@@ -64,15 +104,7 @@ export const constantRoute = [
           icon: 'ShoppingCartFull',
         },
       },
-      {
-        path: '/product/attr',
-        component: () => import('@/views/product/attr/index.vue'),
-        name: 'Attr',
-        meta: {
-          title: '属性管理',
-          icon: 'ChromeFilled',
-        },
-      },
+
       {
         path: '/product/spu',
         component: () => import('@/views/product/spu/index.vue'),
@@ -132,20 +164,36 @@ export const constantRoute = [
       },
     ],
   },
-  {
-    path: '/screen',
-    component: () => import('@/views/screen/index.vue'),
-    name: 'Screen',
-    meta: {
-      hidden: false,
-      title: '数据大屏',
-      icon: 'Platform',
-    },
-  },
-  // {
-  //   //重定向
-  //   path: '/:pathMatch(.*)*',
-  //   redirect: '/404',
-  //   name: 'Any',
-  // },
 ]
+
+//任意路由
+//任意路由
+export const anyRoute = {
+  //任意路由
+  path: '/:pathMatch(.*)*',
+  redirect: '/404',
+  name: 'Any',
+  meta: {
+    title: '任意路由',
+    hidden: true,
+    icon: 'DataLine',
+  },
+}
+
+// let guigu333 = ['Product', 'Trademark', 'Sku']
+// function filterAsyncRoute(asnycRoute, routes) {
+//   return asnycRoute.filter((item) => {
+//     if (routes.includes(item.name)) {
+//       if (item.children && item.children.length > 0) {
+//         item.children = filterAsyncRoute(item.children, routes)
+//       }
+//       return true
+//     }
+//   })
+// }
+// console.log('before',asnycRoute)
+
+// //硅谷333需要展示的异步路由
+// let guigu333Result = filterAsyncRoute(asnycRoute, guigu333)
+// console.log('after',asnycRoute)
+// console.log([...constantRoute, ...guigu333Result, anyRoute], '硅谷333')
