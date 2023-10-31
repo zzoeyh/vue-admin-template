@@ -56,20 +56,247 @@ import useCategoryStore from '@/store/modules/category'
 let categoryStore = useCategoryStore()
 //分类全局组件挂载完毕,通知仓库发请求获取一级分类的数据
 onMounted(() => {
-  categoryStore.getC1()
+  // categoryStore.getC1()
+  categoryStore.c1Arr = [
+    {
+      id: 1,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2022-05-07 11:42:44',
+      name: '图书/音像/电子书刊',
+    },
+    {
+      id: 2,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '手机',
+    },
+    {
+      id: 3,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '家用电器',
+    },
+    {
+      id: 4,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '数码',
+    },
+    {
+      id: 5,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '家居家装',
+    },
+    {
+      id: 6,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '电脑办公',
+    },
+    {
+      id: 7,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '厨具',
+    },
+    {
+      id: 8,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '个护化妆',
+    },
+    {
+      id: 9,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '服饰内衣',
+    },
+    {
+      id: 10,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '钟表',
+    },
+    {
+      id: 11,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '鞋靴',
+    },
+    {
+      id: 12,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '母婴',
+    },
+    {
+      id: 13,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '礼品箱包',
+    },
+    {
+      id: 14,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2022-05-07 11:42:49',
+      name: '食品饮料/保健食品',
+    },
+    {
+      id: 15,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '珠宝',
+    },
+    {
+      id: 16,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '汽车用品',
+    },
+    {
+      id: 17,
+      createTime: '2021-12-10 01:31:41',
+      updateTime: '2021-12-10 01:31:41',
+      name: '运动健康',
+    },
+  ]
 })
 
 //此方法即为一级分类下拉菜单的change事件(选中值的时候会触发,保证一级分类ID有了)
 const handleFirstCategoryChange = () => {
   categoryStore.c2Id = ''
+  categoryStore.c2Arr = []
   categoryStore.c3Arr = []
   categoryStore.c3Id = ''
-  categoryStore.getC2()
+  if (categoryStore.c1Id === 1) {
+    categoryStore.c2Arr = [
+      {
+        id: 1,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '电子书刊',
+        category1Id: 1,
+      },
+      {
+        id: 2,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '音像',
+        category1Id: 1,
+      },
+      {
+        id: 3,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '英文原版',
+        category1Id: 1,
+      },
+      {
+        id: 4,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '文艺',
+        category1Id: 1,
+      },
+      {
+        id: 5,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '少儿',
+        category1Id: 1,
+      },
+      {
+        id: 6,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '人文社科',
+        category1Id: 1,
+      },
+      {
+        id: 7,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '经管励志',
+        category1Id: 1,
+      },
+      {
+        id: 8,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '生活',
+        category1Id: 1,
+      },
+      {
+        id: 9,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '科技',
+        category1Id: 1,
+      },
+      {
+        id: 10,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '教育',
+        category1Id: 1,
+      },
+      {
+        id: 11,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '港台图书',
+        category1Id: 1,
+      },
+      {
+        id: 12,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '其他',
+        category1Id: 1,
+      },
+    ]
+  }
+  // categoryStore.getC2()
 }
 //选中二级时再发送获取三级请求
 const handleSecondCategoryChange = () => {
   categoryStore.c3Id = ''
-  categoryStore.getC3()
+  // categoryStore.getC3()
+  categoryStore.c3Arr = []
+  console.log(categoryStore.c2Id)
+  if (categoryStore.c2Id === 1) {
+    categoryStore.c3Arr = [
+      {
+        id: 1,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '电子书',
+        category2Id: 1,
+      },
+      {
+        id: 2,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '网络原创',
+        category2Id: 1,
+      },
+      {
+        id: 3,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '数字杂志',
+        category2Id: 1,
+      },
+      {
+        id: 4,
+        createTime: '2021-12-10 01:31:41',
+        updateTime: '2021-12-10 01:31:41',
+        name: '多媒体图书',
+        category2Id: 1,
+      },
+    ]
+  }
 }
 
 //接受父组件传递过来scene

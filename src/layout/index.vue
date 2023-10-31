@@ -50,6 +50,7 @@ export default {
 </script>
 <script setup lang="ts">
 //获取路由对象
+import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Logo from './logo/index.vue'
 //引入菜单组件
@@ -64,6 +65,17 @@ import useLayOutSettingStore from '@/store/modules/setting'
 let userStore = useUserStore()
 let LayOutSettingStore = useLayOutSettingStore()
 let $route = useRoute()
+const MIN_POINT = 992 - 1
+const autoCollapsed = () => {
+  const isCompact = window.innerWidth <= MIN_POINT
+  LayOutSettingStore.setFold(isCompact)
+}
+onMounted(() => {
+  autoCollapsed()
+  window.onresize = () => {
+    autoCollapsed()
+  }
+})
 </script>
 
 <style lang="scss" scoped>

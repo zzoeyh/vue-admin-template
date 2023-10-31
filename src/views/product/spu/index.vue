@@ -154,9 +154,9 @@ watch(
 )
 
 //此方法执行:可以获取某一个三级分类下全部的已有的SPU
-const getHasSpu = async (pager = 1) => {
+const getHasSpu = async () => {
   //修改当前页码
-  pageNo.value = pager
+  /*   pageNo.value = pager
   let result: HasSpuResponseData = await reqHasSpu(
     pageNo.value,
     pageSize.value,
@@ -165,23 +165,100 @@ const getHasSpu = async (pager = 1) => {
   if (result.code == 200) {
     records.value = result.data.records
     total.value = result.data.total
+    console.log('3', records.value)
+  } */
+  if (categoryStore.c3Id === 1) {
+    records.value = [
+      {
+        id: 7025,
+        createTime: '2023-10-31 20:55:50',
+        updateTime: '2023-10-31 20:55:50',
+        spuName: '1',
+        description: '1',
+        category3Id: 1,
+        tmId: 2,
+        spuSaleAttrList: null,
+        spuImageList: null,
+        spuPosterList: null,
+      },
+      {
+        id: 7010,
+        createTime: '2023-10-31 17:04:36',
+        updateTime: '2023-10-31 17:04:36',
+        spuName: '测试',
+        description: '测试123',
+        category3Id: 1,
+        tmId: 2,
+        spuSaleAttrList: null,
+        spuImageList: null,
+        spuPosterList: null,
+      },
+      {
+        id: 6933,
+        createTime: '2023-10-25 16:46:15',
+        updateTime: '2023-10-25 16:46:15',
+        spuName: 'fsdfsd',
+        description: 'fdsfsd123',
+        category3Id: 1,
+        tmId: 1,
+        spuSaleAttrList: null,
+        spuImageList: null,
+        spuPosterList: null,
+      },
+    ]
+  } else if (categoryStore.c3Id === 2) {
+    records.value = [
+      {
+        id: 6858,
+        createTime: '2023-10-03 00:38:44',
+        updateTime: '2023-10-03 00:38:44',
+        spuName: '勾巴原创22',
+        description: '乱填的333',
+        category3Id: 2,
+        tmId: 1,
+        spuSaleAttrList: null,
+        spuImageList: null,
+        spuPosterList: null,
+      },
+      {
+        id: 6489,
+        createTime: '2023-09-05 14:38:17',
+        updateTime: '2023-09-05 14:38:17',
+        spuName: '1·2',
+        description: '',
+        category3Id: 2,
+        tmId: null,
+        spuSaleAttrList: null,
+        spuImageList: null,
+        spuPosterList: null,
+      },
+      {
+        id: 6297,
+        createTime: '2023-10-03 00:38:44',
+        updateTime: '2023-10-03 00:38:44',
+        spuName: '勾巴原创',
+        description: '乱填的333',
+        category3Id: 2,
+        tmId: 1,
+        spuSaleAttrList: null,
+        spuImageList: null,
+        spuPosterList: null,
+      },
+    ]
   }
+  total.value = records.value.length
 }
-//分页器下拉菜单发生变化的时候触发
+
 const changeSize = () => {
   getHasSpu()
 }
 
-//添加新的SPU按钮的回调
 const addSpu = () => {
-  //切换为场景1:添加与修改已有SPU结构->SpuForm
+  //切换到spuForm
   scene.value = 1
-  //点击添加SPU按钮,调用子组件的方法初始化数据
   spu.value.initAddSpu(categoryStore.c3Id)
 }
-//修改已有的SPU的按钮的回调
 const updateSpu = (row: SpuData) => {
-  //切换为场景1:添加与修改已有SPU结构->SpuForm
   scene.value = 1
   //调用子组件实例方法获取完整已有的SPU的数据
   spu.value.initHasSpuData(row)

@@ -11,7 +11,7 @@ export interface Permisstion {
   updateTime: string
   pid: number
   name: string
-  code: null
+  code?: null
   toCode: null
   type: number
   status: null

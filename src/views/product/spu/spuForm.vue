@@ -388,6 +388,8 @@ const initAddSpu = async (c3Id: number | string) => {
   let result: AllTradeMark = await reqAllTradeMark()
   let result1: HasSaleAttrResponseData = await reqAllSaleAttr()
   //存储数据
+  console.log(result)
+  console.log(result1)
   AllTradeMark.value = result.data
   allSaleAttr.value = result1.data
 }

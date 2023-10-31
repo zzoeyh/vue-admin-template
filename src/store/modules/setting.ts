@@ -13,6 +13,9 @@ const useLayOutSettingStore = defineStore('SettingStore', {
     setLocale(lang: string) {
       this.locale = lang
     },
+    setFold(fold: boolean) {
+      this.fold = fold
+    },
   },
 })
 

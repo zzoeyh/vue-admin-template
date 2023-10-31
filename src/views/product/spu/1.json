@@ -1,0 +1,148 @@
+{
+  "code": 200,
+  "message": "成功",
+  //spu
+  "data": [
+    {
+      "id": 1,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:02",
+      "tmName": "小米",
+      "logoUrl": "39.98.123.211/group1/M00/03/D9/rBHu8mHmKC6AQ-j2AAAb72A3EO0942.jpg"
+    },
+    {
+      "id": 2,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:21",
+      "tmName": "苹果",
+      "logoUrl": "http://39.98.123.211/group1/M00/03/D9/rBHu8mHmKHOADErHAAAQBezsFBo612.jpg"
+    },
+    {
+      "id": 3,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:28",
+      "tmName": "华为",
+      "logoUrl": "http://39.98.123.211/group1/M00/03/D9/rBHu8mHmKF2AWpcKAADv98DWYRo516.jpg"
+    },
+    {
+      "id": 4,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:32",
+      "tmName": "尚硅谷",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DA/rBHu8mGxObeAfL10AAAsPY94Hn8745.png"
+    },
+    {
+      "id": 5,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:35",
+      "tmName": "OPPO",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DA/rBHu8mGxOciADR75AAE6kN74a-E289.png"
+    },
+    {
+      "id": 6,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:38",
+      "tmName": "VIVO",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DA/rBHu8mGxOdKAamtYAAC9HgX-V4c228.png"
+    },
+    {
+      "id": 7,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:42",
+      "tmName": "三星",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DA/rBHu8mGxOduAL3-vAAAyNxaecgE342.jpg"
+    },
+    {
+      "id": 22,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:45",
+      "tmName": "长虹",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DC/rBHu8mGyMWmAMfrHAAAVOe83Fy0651.jpg"
+    },
+    {
+      "id": 23,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:52",
+      "tmName": "索尼",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DC/rBHu8mGyMX-AUh4sAAAH6bIsT_o073.jpg"
+    },
+    {
+      "id": 24,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:56",
+      "tmName": "联想",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DC/rBHu8mGyMaWAW-TWAAAIiNxy53s540.jpg"
+    },
+    {
+      "id": 25,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:48:59",
+      "tmName": "华硕",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DC/rBHu8mGyMbKAQP0sAAAWKq85SVY068.jpg"
+    },
+    {
+      "id": 26,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:49:02",
+      "tmName": "海信",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DC/rBHu8mGyMcCAX4bGAAANH1m3gic067.jpg"
+    },
+    {
+      "id": 27,
+      "createTime": "2021-12-10 01:31:41",
+      "updateTime": "2023-04-15 15:49:06",
+      "tmName": "戴尔",
+      "logoUrl": "http://39.98.123.211/group1/M00/02/DC/rBHu8mGyMc6AUHGFAAAS6pwrg18359.jpg"
+    },
+    {
+      "id": 23068,
+      "createTime": "2023-10-31 23:15:07",
+      "updateTime": "2023-10-31 23:15:07",
+      "tmName": "123123",
+      "logoUrl": "http://139.198.127.41:9000/sph/20231031/1805f7d3-eac6-49c8-a180-8d54aa3e6d94.png"
+    },
+    {
+      "id": 23069,
+      "createTime": "2023-10-31 23:15:23",
+      "updateTime": "2023-10-31 23:15:23",
+      "tmName": "123",
+      "logoUrl": "http://139.198.127.41:9000/sph/20231031/1695711533613.jpg"
+    },
+    {
+      "id": 23073,
+      "createTime": "2023-10-31 23:41:28",
+      "updateTime": "2023-10-31 23:41:28",
+      "tmName": "",
+      "logoUrl": ""
+    },
+    {
+      "id": 23074,
+      "createTime": "2023-10-31 23:41:34",
+      "updateTime": "2023-10-31 23:41:34",
+      "tmName": "",
+      "logoUrl": ""
+    },
+    {
+      "id": 23075,
+      "createTime": "2023-10-31 23:44:34",
+      "updateTime": "2023-10-31 23:44:34",
+      "tmName": "",
+      "logoUrl": ""
+    },
+    {
+      "id": 23076,
+      "createTime": "2023-11-01 00:06:54",
+      "updateTime": "2023-11-01 00:06:54",
+      "tmName": "dd",
+      "logoUrl": "http://139.198.127.41:9000/sph/20231101/001.png"
+    },
+    {
+      "id": 23077,
+      "createTime": "2023-11-01 00:08:47",
+      "updateTime": "2023-11-01 00:08:47",
+      "tmName": "rrr",
+      "logoUrl": "http://139.198.127.41:9000/sph/20231101/屏幕截图 2023-09-08 162602.png"
+    }
+  ],
+  "ok": true
+}
