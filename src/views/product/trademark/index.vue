@@ -106,7 +106,7 @@
 </template>
 
 <script setup lang="ts">
-import { ElMessage, UploadProps, formEmits } from 'element-plus'
+import { ElMessage, UploadProps } from 'element-plus'
 //引入组合式API函数
 import { ref, onMounted, reactive, nextTick } from 'vue'
 import {

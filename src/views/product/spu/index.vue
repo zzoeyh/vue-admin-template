@@ -212,8 +212,8 @@ const getHasSpu = async () => {
         id: 6858,
         createTime: '2023-10-03 00:38:44',
         updateTime: '2023-10-03 00:38:44',
-        spuName: '勾巴原创22',
-        description: '乱填的333',
+        spuName: '原创',
+        description: '原创',
         category3Id: 2,
         tmId: 1,
         spuSaleAttrList: null,
@@ -236,8 +236,8 @@ const getHasSpu = async () => {
         id: 6297,
         createTime: '2023-10-03 00:38:44',
         updateTime: '2023-10-03 00:38:44',
-        spuName: '勾巴原创',
-        description: '乱填的333',
+        spuName: '原创',
+        description: '333',
         category3Id: 2,
         tmId: 1,
         spuSaleAttrList: null,
@@ -256,7 +256,7 @@ const changeSize = () => {
 const addSpu = () => {
   //切换到spuForm
   scene.value = 1
-  spu.value.initAddSpu(categoryStore.c3Id)
+  // spu.value.initAddSpu(categoryStore.c3Id)
 }
 const updateSpu = (row: SpuData) => {
   scene.value = 1
@@ -268,7 +268,7 @@ const changeScene = (obj: any) => {
   scene.value = obj.flag
   if (obj.params == 'update') {
     //更新留在当前页
-    getHasSpu(pageNo.value)
+    getHasSpu()
   } else {
     //添加留在第一页
     getHasSpu()
@@ -280,7 +280,7 @@ const addSku = (row: SpuData) => {
   //点击添加SKU按钮切换场景为2
   scene.value = 2
   //调用子组件的方法初始化添加SKU的数据
-  sku.value.initSkuData(categoryStore.c1Id, categoryStore.c2Id, row)
+  // sku.value.initSkuData(categoryStore.c1Id, categoryStore.c2Id, row)
 }
 
 //查看SKU列表的数据
@@ -302,7 +302,7 @@ const deleteSpu = async (row: SpuData) => {
       message: '删除成功',
     })
     //获取剩余SPU数据
-    getHasSpu(records.value.length > 1 ? pageNo.value : pageNo.value - 1)
+    getHasSpu()
   } else {
     ElMessage({
       type: 'error',

@@ -45,12 +45,6 @@ export const constantRoute = [
       icon: 'Platform',
     },
   },
-  // {
-  //   //重定向
-  //   path: '/:pathMatch(.*)*',
-  //   redirect: '/404',
-  //   name: 'Any',
-  // },
   {
     path: '/result',
     component: () => import('@/layout/index.vue'),
@@ -166,12 +160,10 @@ export const asnycRoute = [
   },
 ]
 
-//任意路由
-//任意路由
 export const anyRoute = {
   //任意路由
   path: '/:pathMatch(.*)*',
-  redirect: '/404',
+  redirect: '/result/error',
   name: 'Any',
   meta: {
     title: '任意路由',
@@ -179,21 +171,3 @@ export const anyRoute = {
     icon: 'DataLine',
   },
 }
-
-// let guigu333 = ['Product', 'Trademark', 'Sku']
-// function filterAsyncRoute(asnycRoute, routes) {
-//   return asnycRoute.filter((item) => {
-//     if (routes.includes(item.name)) {
-//       if (item.children && item.children.length > 0) {
-//         item.children = filterAsyncRoute(item.children, routes)
-//       }
-//       return true
-//     }
-//   })
-// }
-// console.log('before',asnycRoute)
-
-// //硅谷333需要展示的异步路由
-// let guigu333Result = filterAsyncRoute(asnycRoute, guigu333)
-// console.log('after',asnycRoute)
-// console.log([...constantRoute, ...guigu333Result, anyRoute], '硅谷333')

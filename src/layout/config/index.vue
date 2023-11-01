@@ -2,7 +2,7 @@
   <div>
     <el-drawer
       v-model="drawer"
-      title="I am the title"
+      title="个性化配置"
       :direction="direction"
       :before-close="handleClose"
     >
@@ -10,8 +10,8 @@
         <el-form-item label="设置主题">
           <el-color-picker
             v-model="color"
-            @change="setColor"
             size="small"
+            @change="setColor"
             :predefine="predefineColors"
             class="color-picker"
           />
@@ -43,16 +43,25 @@ const direction = ref('rtl')
 let dark = ref<boolean>(false)
 
 const handleClose = (done: () => void) => {
-  ElMessageBox.confirm('Are you sure you want to close this?')
+  configStore.setSettingVisible(false)
+  done()
+
+  /*   ElMessageBox.confirm('你确定要关闭该弹窗吗')
     .then(() => {
       configStore.setSettingVisible(false)
       done()
     })
     .catch(() => {
       // catch error
-    })
+    }) */
 }
-
+function cancelClick() {
+  configStore.setSettingVisible(false)
+}
+function confirmClick() {
+  setColor()
+  configStore.setSettingVisible(false)
+}
 //颜色组件组件的数据
 let color = ref('#409EFF')
 const predefineColors = ref([
@@ -83,7 +92,7 @@ const changeDark = () => {
 //主题颜色的设置
 const setColor = () => {
   //通知js修改根节点的样式对象的属性与属性值
-  console.log(color.value)
+  // console.log(color.value)
   const html = document.documentElement
   html.style.setProperty('--el-color-primary', color.value)
 }

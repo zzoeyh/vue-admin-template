@@ -3,7 +3,7 @@
     <div class="banner">
       <img :src="userStore.avatar" alt="" class="avatar" />
       <div class="bottom">
-        <h3 class="title">{{ getTime() }}好呀{{ userStore.username }}</h3>
+        <h3 class="title">{{ t('greet') }}{{ userStore.username }}</h3>
         <p class="subtitle">{{ t('navBar.home') }}</p>
       </div>
     </div>

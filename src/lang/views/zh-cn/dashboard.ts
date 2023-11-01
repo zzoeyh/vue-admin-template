@@ -1,4 +1,5 @@
 export default {
+  greet: '你好呀！ ',
   panel: {
     registration: '注册人员',
     product: '产品总数',

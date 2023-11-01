@@ -7,11 +7,7 @@
       :class="{ fold: LayOutSettingStore.fold ? true : false }"
     >
       <Logo></Logo>
-      <!-- 展示菜单 -->
-      <!-- 滚动组件 -->
       <el-scrollbar class="scrollbar">
-        <!-- 菜单组件 -->
-        <!-- 菜单组件-->
         <el-menu
           :collapse="LayOutSettingStore.fold ? true : false"
           :default-active="$route.path"

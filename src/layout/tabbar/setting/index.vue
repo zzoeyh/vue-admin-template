@@ -36,14 +36,14 @@
     </span>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item>退出登陆</el-dropdown-item>
+        <el-dropdown-item @click="logout">退出登陆</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
 </template>
 
 <script setup lang="ts">
-import { ref, unref } from 'vue'
+import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import useLayOutSettingStore from '@/store/modules/setting'
 import useUserStore from '@/store/modules/user'
@@ -83,41 +83,15 @@ const changeLanguage = () => {
   let lang = layoutSettingStore.locale === 'zh-cn' ? 'en' : 'zh-cn'
   layoutSettingStore.setLocale(lang)
   i18.locale.value = lang
-  console.log(layoutSettingStore.locale)
 }
-//颜色组件组件的数据
-let color = ref('#409EFF')
-const predefineColors = ref([
-  '#ff4500',
-  '#ff8c00',
-  '#ffd700',
-  '#90ee90',
-  '#00ced1',
-  '#1e90ff',
-  '#c71585',
-  'rgba(255, 69, 0, 0.68)',
-  'rgb(255, 120, 0)',
-  'hsv(51, 100, 98)',
-  'hsva(120, 40, 94, 0.5)',
-  'hsl(181, 100%, 37%)',
-  'hsla(209, 100%, 56%, 0.73)',
-  '#c7158577',
-])
-
-//switch开关的chang事件进行暗黑模式的切换
-const changeDark = () => {
-  //获取HTML根节点
-  let html = document.documentElement
-  //判断HTML标签是否有类名dark
-  dark.value ? (html.className = 'dark') : (html.className = '')
-}
-
-//主题颜色的设置
-const setColor = () => {
-  //通知js修改根节点的样式对象的属性与属性值
-  console.log(color.value)
-  const html = document.documentElement
-  html.style.setProperty('--el-color-primary', color.value)
+//退出登录点击回调
+const logout = async () => {
+  //第一件事情:需要向服务器发请求[退出登录接口]******
+  //第二件事情:仓库当中关于用于相关的数据清空[token|username|avatar]
+  //第三件事情:跳转到登录页面
+  await userStore.userLogout()
+  //跳转到登录页面
+  $router.push({ path: '/login', query: { redirect: $route.path } })
 }
 </script>
 

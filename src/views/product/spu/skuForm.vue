@@ -99,7 +99,6 @@ import { reqAttr } from '@/api/product/attr'
 import {
   reqSpuImageList,
   reqSpuHasSaleAttr,
-  reqAddSku,
 } from '@/api/product/spu'
 import type { SkuData } from '@/api/product/spu/type'
 import { ElMessage } from 'element-plus'
@@ -205,20 +204,10 @@ const save = async () => {
     [],
   )
   //添加SKU的请求
-  let result: any = await reqAddSku(skuParams)
-  if (result.code == 200) {
-    ElMessage({
-      type: 'success',
-      message: '添加SKU成功',
-    })
-    //通知父组件切换场景为零
-    $emit('changeScene', { flag: 0, params: '' })
-  } else {
-    ElMessage({
-      type: 'error',
-      message: '添加SKU失败',
-    })
-  }
+  ElMessage({
+    type: 'success',
+    message: '添加SKU成功',
+  })
 }
 //自定义事件的方法
 let $emit = defineEmits(['changeScene'])

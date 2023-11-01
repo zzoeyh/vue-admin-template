@@ -198,7 +198,7 @@ data.value = {
       tmId: 6,
       category3Id: 61,
       skuDefaultImg:
-        'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcKAA4kQAAAjnj5T1_M968.jpg',
+        'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
       isSale: 0,
       skuImageList: null,
       skuAttrValueList: null,
@@ -210,12 +210,13 @@ data.value = {
       updateTime: '2023-10-31 13:54:20',
       spuId: 7004,
       price: 23,
-      skuName: '份儿饭',
-      skuDesc: '份儿饭',
+      skuName: '测试',
+      skuDesc: '测试',
       weight: '23.00',
       tmId: 6,
       category3Id: 61,
-      skuDefaultImg: 'http://139.198.127.41:9000/sph/20231030/55.jpg',
+      skuDefaultImg:
+        'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
       isSale: 0,
       skuImageList: null,
       skuAttrValueList: null,
@@ -227,12 +228,13 @@ data.value = {
       updateTime: '2023-10-31 11:00:33',
       spuId: 7004,
       price: 21,
-      skuName: '陆沅均',
-      skuDesc: '陆沅均',
+      skuName: '测试2',
+      skuDesc: '测试2',
       weight: '21.00',
       tmId: 6,
       category3Id: 61,
-      skuDefaultImg: 'http://139.198.127.41:9000/sph/20231030/55.jpg',
+      skuDefaultImg:
+        'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
       isSale: 0,
       skuImageList: null,
       skuAttrValueList: null,
@@ -296,7 +298,7 @@ const findSku = async (row: SkuData) => {
   //抽屉展示出来
   drawer.value = true
   //获取已有商品详情数据
-  let result: SkuInfoData = await reqSkuInfo(row.id as number)
+  // let result: SkuInfoData = await reqSkuInfo(row.id as number)
   //存储已有的SKU
   skuInfo.value = {
     id: 6470,
@@ -310,7 +312,7 @@ const findSku = async (row: SkuData) => {
     tmId: 6,
     category3Id: 61,
     skuDefaultImg:
-      'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcKAA4kQAAAjnj5T1_M968.jpg',
+      'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
     isSale: 0,
     skuImageList: [
       {
@@ -320,7 +322,7 @@ const findSku = async (row: SkuData) => {
         skuId: 6470,
         imgName: '4b990e9437b1a445(3).jpg',
         imgUrl:
-          'http://39.98.123.211/group2/M00/02/DA/rBHu8mGxPb-AQOTXAAAWgQNuXx0990.jpg',
+          'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
         spuImgId: 33,
         isDefault: '0',
       },
@@ -331,108 +333,9 @@ const findSku = async (row: SkuData) => {
         skuId: 6470,
         imgName: '4b990e9437b1a445(4).jpg',
         imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcCANXGrAAH0CTAPZ8s596.jpg',
+          'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png',
         spuImgId: 34,
         isDefault: '0',
-      },
-      {
-        id: 368,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '4b990e9437b1a445.jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPb-AbAS8AADirbHQFGA856.jpg',
-        spuImgId: 35,
-        isDefault: '0',
-      },
-      {
-        id: 369,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '6e9c3fddfdb5f259(3).jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DA/rBHu8mGxPb-AdsRiAAAXSc-vA1g078.jpg',
-        spuImgId: 36,
-        isDefault: '0',
-      },
-      {
-        id: 370,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '6e9c3fddfdb5f259(4).jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DA/rBHu8mGxPb-AHu9rAAAXSc-vA1g771.jpg',
-        spuImgId: 37,
-        isDefault: '0',
-      },
-      {
-        id: 371,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '6e9c3fddfdb5f259(5).jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcCAdXz-AAH-KXfKgUs928.jpg',
-        spuImgId: 38,
-        isDefault: '0',
-      },
-      {
-        id: 372,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '6e9c3fddfdb5f259.jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcKAFegrAADUYiq4ewg638.jpg',
-        spuImgId: 39,
-        isDefault: '0',
-      },
-      {
-        id: 373,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '7ecc0b0294ff0bb0.jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcKAT7UnAAAiW3yrEHc898.jpg',
-        spuImgId: 40,
-        isDefault: '0',
-      },
-      {
-        id: 374,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '85a8a527ca8eb6da.jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcKAc66yAAArSXlhsUg866.jpg',
-        spuImgId: 41,
-        isDefault: '0',
-      },
-      {
-        id: 375,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '8932ba2e655a03e4.jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcKAZ_qwAAAaCuo69pQ498.jpg',
-        spuImgId: 42,
-        isDefault: '0',
-      },
-      {
-        id: 376,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        skuId: 6470,
-        imgName: '41550ab1f3f369df.jpg',
-        imgUrl:
-          'http://39.98.123.211/group2/M00/02/DB/rBHu8mGxPcKAA4kQAAAjnj5T1_M968.jpg',
-        spuImgId: 43,
-        isDefault: '1',
       },
     ],
     skuAttrValueList: [
@@ -444,7 +347,7 @@ const findSku = async (row: SkuData) => {
         valueId: 175754,
         skuId: 6470,
         attrName: '运行内存',
-        valueName: '6G',
+        valueName: '测试',
       },
       {
         id: 10982,
@@ -453,8 +356,8 @@ const findSku = async (row: SkuData) => {
         attrId: 19162,
         valueId: 175896,
         skuId: 6470,
-        attrName: '别添加无用数据',
-        valueName: 'vue3',
+        attrName: '颜色',
+        valueName: '汉堡',
       },
       {
         id: 10983,
@@ -474,27 +377,7 @@ const findSku = async (row: SkuData) => {
         valueId: 175915,
         skuId: 6470,
         attrName: '颜色',
-        valueName: '了解了解科技馆颗粒剂',
-      },
-      {
-        id: 10985,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        attrId: 19186,
-        valueId: 175924,
-        skuId: 6470,
-        attrName: '添加一条',
-        valueName: '测试一下2',
-      },
-      {
-        id: 10986,
-        createTime: '2023-10-31 13:58:18',
-        updateTime: '2023-10-31 13:58:18',
-        attrId: 19187,
-        valueId: 175926,
-        skuId: 6470,
-        attrName: '11',
-        valueName: '22',
+        valueName: '测试',
       },
     ],
     skuSaleAttrValueList: [],

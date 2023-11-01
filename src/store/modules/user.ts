@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { reqLogin, reqUserInfo } from '@/api/user'
 import type { loginFormData, loginResponseData } from '@/api/user/type'
 import type { UserState } from './types/type'
-import { SET_TOKEN, GET_TOKEN } from '@/utils/token'
+import { SET_TOKEN, GET_TOKEN, REMOVE_TOKEN } from '@/utils/token'
 //引入路由(常量路由)
 import { constantRoute, asnycRoute, anyRoute } from '@/router/routes'
 
@@ -12,7 +12,6 @@ function filterAsyncRoute(asnycRoute: any, routes: any) {
   return asnycRoute.filter((item: any) => {
     if (routes.includes(item.name)) {
       if (item.children && item.children.length > 0) {
-        //硅谷333账号:product\trademark\attr\sku
         item.children = filterAsyncRoute(item.children, routes)
       }
       return true
@@ -32,52 +31,73 @@ const useUserStore = defineStore('User', {
       buttons: [],
     }
   },
-  //处理异步|逻辑
   actions: {
-    //用户登录的方法
+    //用户登录
     async userLogin(data: loginFormData) {
       //登录请求
       try {
-        const result: loginResponseData = await reqLogin(data)
-        if (result.code === 200) {
-          //pinia仓库存储一下token
-          //由于pinia|vuex存储数据其实利用js对象
+        if (data.username === 'admin' && data.password === '111111') {
+          const result = {
+            code: 200,
+            data: 'ADMIN',
+          }
           this.token = result.data as string
-          //本地存储持久化存储一份
-          console.log(result.data)
           SET_TOKEN(result.data as string)
-          //能保证当前async函数返回一个成功的promise
-          return 'ok'
+        } else if (data.username === 'user' && data.password === '111111') {
+          const result = {
+            code: 200,
+            data: 'USER',
+          }
+          this.token = result.data as string
+          SET_TOKEN(result.data as string)
         } else {
-          //throw error后调用的vue组件里面可以使用trycatch捕获到异常，因此在调用的地方无需再判断code是否为200
-          throw new Error(result.message)
+          throw new Error('用户名或密码错误')
         }
+        // const result: loginResponseData = await reqLogin(data)
+        // if (result.code === 200) {
+        //   // 存储token
+        //   this.token = result.data as string
+        //   SET_TOKEN(result.data as string)
+        //   return 'ok'
+        // } else {
+        //   throw new Error(result.data)
+        // }
       } catch (err) {
         return Promise.reject(err)
       }
-      //登录请求:成功200->token
-      //登录请求:失败201->登录失败错误的信息
     },
-    //获取用户信息方法
+    //获取用户信息
     async userInfo() {
       //获取用户信息进行存储
       try {
         // const result = await reqUserInfo()
-        const result = {
-          data: {
-            name: 'admin',
-            avatar: '',
-            routes: [
-              'Product',
-              'Spu',
-              'Sku',
-              'Manage',
-              'Trademark',
-              'Role',
-              'Permission',
-            ],
-          },
+        let result = { data: {} }
+        if (GET_TOKEN() === 'ADMIN') {
+          result = {
+            data: {
+              name: 'admin',
+              avatar: '/avatar.png',
+              routes: [
+                'Product',
+                'Spu',
+                'Sku',
+                'Manage',
+                'Role',
+                'Permission',
+                'User',
+              ],
+            },
+          }
+        } else {
+          result = {
+            data: {
+              name: 'user',
+              avatar: '/avatar.png',
+              routes: ['Product', 'Spu', 'Sku'],
+            },
+          }
         }
+
         const myAsnycRoute = [...asnycRoute]
         this.username = result.data.name
         this.avatar = result.data.avatar
@@ -87,8 +107,6 @@ const useUserStore = defineStore('User', {
         )
         //菜单需要的数据整理完毕
         this.menuRoutes = [...constantRoute, ...userAsyncRoute, anyRoute]
-
-        console.log(this.menuRoutes)
         //目前路由器管理的只有常量路由:用户计算完毕异步路由、任意路由动态追加
         ;[...userAsyncRoute, anyRoute].forEach((route: any) => {
           router.addRoute(route)
@@ -96,6 +114,13 @@ const useUserStore = defineStore('User', {
       } catch (err) {
         console.error(err)
       }
+    },
+    //退出登录
+    async userLogout() {
+      this.token = ''
+      this.username = ''
+      this.avatar = ''
+      REMOVE_TOKEN()
     },
   },
   getters: {},

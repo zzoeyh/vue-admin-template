@@ -1,4 +1,5 @@
 export default {
+  greet: 'Hello!',
   panel: {
     registration: 'Number of registrants',
     product: 'Total number of product',

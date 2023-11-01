@@ -8,8 +8,8 @@
           :rules="rules"
           ref="loginForms"
         >
-          <h1>Hello</h1>
-          <h2>vue-admin-template</h2>
+          <h1>vue-admin-template</h1>
+          <h2>welcome!</h2>
           <el-form-item>
             <el-input
               :prefix-icon="User"
@@ -136,13 +136,14 @@ const rules = {
 .login_container {
   width: 100%;
   height: 100vh;
-  background: url('@/assets/images/background.jpg') no-repeat;
-  background-size: cover;
+  background: url('@/assets/images/background.jpg') no-repeat #93a5f1;
+  background-position: 0 100px;
   .login_form {
     position: relative;
     width: 80%;
     top: 30vh;
-    background: url('@/assets/images/login_form.png') no-repeat;
+    background: linear-gradient(#dbdcf1, #d6e5f4);
+    border-radius: 20px;
     background-size: cover;
     padding: 40px;
     left: 100%;
